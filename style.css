@@ -1,22 +1,16 @@
-/* BODY: sayfayı ortalar, sabit genişlik için yatay scroll aktif */
 body {
   margin: 0;
   padding: 0;
   background: #000;
   font-family: sans-serif;
-  
-  /* Sayfa küçülünce yatay scroll çıkması için */
   overflow-x: auto;
   overflow-y: hidden;
-  
-  /* Slaytı ortalamak için flex */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
 }
 
-/* Slayt konteyneri sabit 1920x1080, ortalanmış */
 .slider-container {
   width: 1920px;
   height: 1080px;
@@ -27,28 +21,27 @@ body {
   margin: 20px auto;
 }
 
-/* Slaytların yatay yan yana dizilmesi, toplam genişlik 3 slayt için 5760px */
 .slider-track {
   display: flex;
   width: calc(1920px * 3);
   transition: transform 1s ease-in-out;
 }
 
-/* Her bir slayt sabit genişlik ve yükseklik */
 .slide {
-  min-width: 1920px;
-  height: 1080px;
-  box-sizing: border-box;
-}
-
-/* Resim de 1920x1080, kaplama (cover) */
-.slide img {
   width: 1920px;
   height: 1080px;
-  object-fit: contain; /* taşmayı engeller, resmi tam gösterir */
-  background-color: black; /* boş kalan yer siyah olur */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 /* Ok tuşları */
 .arrow {
@@ -77,3 +70,4 @@ body {
 .right {
   right: 15px;
 }
+

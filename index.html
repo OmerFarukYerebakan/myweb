@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animasyonlu Slayt</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slayt Gösterisi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="slider-container">
     <div class="slider-track" id="sliderTrack">
-      <div class="slide"><img src="img1.png" alt="1"></div>
-      <div class="slide"><img src="img2.png" alt="2"></div>
-      <div class="slide"><img src="img3.png" alt="3"></div>
+      <div class="slide">
+        <img src="img1.png" alt="Slayt 1" />
+      </div>
+      <div class="slide">
+        <img src="img2.png" alt="Slayt 2" />
+      </div>
+      <div class="slide">
+        <img src="img3.png" alt="Slayt 3" />
+      </div>
     </div>
 
-    <button class="arrow left" onclick="prevSlide()">❮</button>
-    <button class="arrow right" onclick="nextSlide()">❯</button>
+    <button class="arrow left" id="prevBtn">❮</button>
+    <button class="arrow right" id="nextBtn">❯</button>
   </div>
 
   <script src="script.js"></script>

@@ -45,8 +45,10 @@ body {
 .slide img {
   width: 1920px;
   height: 1080px;
-  object-fit: cover;
+  object-fit: contain; /* taşmayı engeller, resmi tam gösterir */
+  background-color: black; /* boş kalan yer siyah olur */
 }
+
 
 /* Ok tuşları */
 .arrow {

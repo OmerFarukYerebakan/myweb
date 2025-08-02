@@ -1,37 +1,50 @@
+/* BODY: sayfayı ortalar, sabit genişlik için yatay scroll aktif */
 body {
   margin: 0;
   padding: 0;
   background: #000;
   font-family: sans-serif;
+  
+  /* Sayfa küçülünce yatay scroll çıkması için */
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  /* Slaytı ortalamak için flex */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
 }
 
+/* Slayt konteyneri sabit 1920x1080, ortalanmış */
 .slider-container {
-  width: 800px;
-  height: 450px;
+  width: 1920px;
+  height: 1080px;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 0 20px #000;
   position: relative;
+  margin: 20px auto;
 }
 
+/* Slaytların yatay yan yana dizilmesi, toplam genişlik 3 slayt için 5760px */
 .slider-track {
   display: flex;
-  width: 300%; /* slayt sayısı kadar % */
+  width: calc(1920px * 3);
   transition: transform 1s ease-in-out;
 }
 
+/* Her bir slayt sabit genişlik ve yükseklik */
 .slide {
-  min-width: 100%;
+  min-width: 1920px;
+  height: 1080px;
   box-sizing: border-box;
 }
 
+/* Resim de 1920x1080, kaplama (cover) */
 .slide img {
-  width: 100%;
-  height: 100%;
+  width: 1920px;
+  height: 1080px;
   object-fit: cover;
 }
 

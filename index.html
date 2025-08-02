@@ -2,25 +2,22 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Coming Soon</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #000; /* arka plan siyah */
-    }
-    img {
-      display: block;
-      margin: auto;
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      top: 0; bottom: 0; left: 0; right: 0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animasyonlu Slayt</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="resim.png" alt="PNG">
+  <div class="slider-container">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide"><img src="img1.jpg" alt="1"></div>
+      <div class="slide"><img src="img2.jpg" alt="2"></div>
+      <div class="slide"><img src="img3.jpg" alt="3"></div>
+    </div>
+
+    <button class="arrow left" onclick="prevSlide()">❮</button>
+    <button class="arrow right" onclick="nextSlide()">❯</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

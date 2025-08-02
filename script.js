@@ -1,21 +1,29 @@
-let currentIndex = 0;
 const track = document.getElementById('sliderTrack');
-const totalSlides = track.children.length;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentIndex = 0;
+
+const slideWidth = 1920; // px
 
 function updateSlide() {
-  const offset = -currentIndex * 100;
-  track.style.transform = `translateX(${offset}%)`;
+  track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 }
 
-function nextSlide() {
+document.getElementById('nextBtn').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % totalSlides;
   updateSlide();
-}
+});
 
-function prevSlide() {
+document.getElementById('prevBtn').addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
   updateSlide();
-}
+});
 
-// Otomatik geçiş: her 5 saniyede bir ileri kaydır
-setInterval(nextSlide, 5000);
+// Otomatik geçiş (5 saniye)
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlide();
+}, 5000);
+
+// İlk gösterim
+updateSlide();
